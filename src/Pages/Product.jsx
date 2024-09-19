@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import ProductDetail from '../Component/ProductDetail';
+
 import { ProductData } from '../Slice/ProductSlice';
 
 const Product = () => {
@@ -56,10 +56,10 @@ const Product = () => {
                   <p className="text-lg font-bold text-blue-500">Price: {item.price_in_bd} BDT</p>
 
                   <div className="button pt-5 pb-5 flex gap-5 w-full">
-                    <button  className="bg-blue-500 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                    <button  className="bg-yellow-700 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
                       See More
                     </button>
-                    <button className="bg-blue-500 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                    <button className="bg-yellow-700 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
                       Buy Now
                     </button>
                   </div>

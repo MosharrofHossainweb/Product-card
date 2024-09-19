@@ -10,7 +10,7 @@ const ProductDetail = () => {
 
   return (
     <div className="container mx-auto p-5">
-      <div className="max-w-4xl mx-auto bg-white border border-gray-300 rounded-xl shadow-lg p-8">
+      <div className="max-w-4xl mx-auto bg-blue-300 border border-gray-300 rounded-xl shadow-lg p-8">
         {/* Product Image */}
         <img
           className="w-full h-96 object-cover rounded-lg mb-6 shadow-md"
@@ -29,7 +29,7 @@ const ProductDetail = () => {
         </div>
 
         {/* Product Specifications */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-inner mb-6">
+        <div className="bg-gray-300 p-6 rounded-lg shadow-inner mb-6">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Specifications</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="text-lg text-gray-700">
