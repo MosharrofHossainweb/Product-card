@@ -1,9 +1,12 @@
-import React from 'react';
+
 import { useSelector } from 'react-redux';
 
 const ProductDetail = () => {
   // Fetch data from Redux store
   const sliceData = useSelector((state) => state.counter.value);
+
+
+
 
   return (
     <div className="container mx-auto p-5">
@@ -11,14 +14,14 @@ const ProductDetail = () => {
         {/* Product Image */}
         <img
           className="w-full h-96 object-cover rounded-lg mb-6 shadow-md"
-          src={sliceData?.photo || 'https://via.placeholder.com/600'} // Fallback image URL
+          src={sliceData?.photo || 'https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344667.93946102.png'} // Fallback image URL
           alt={sliceData?.model_number || 'Product Name'}
         />
 
         {/* Product Header */}
         <div className="mb-6">
           <h1 className="text-4xl font-extrabold text-gray-800 mb-2">
-            {sliceData?.manufacturer_name || 'Manufacturer Name'} {sliceData?.model_number || 'Model Number'}
+            {sliceData?.manufacturer_name || 'Manufacturer Name'} {sliceData?.model_number || '240111C'}
           </h1>
           <p className="text-xl text-gray-600">
             Made in: <span className="font-medium text-gray-800">{sliceData?.made_by_country || 'Country Name'}</span>
@@ -59,10 +62,10 @@ const ProductDetail = () => {
 
         {/* Action Buttons */}
         <div className="flex gap-6">
-          <button className="bg-blue-600 text-white text-lg px-8 py-3 rounded-full shadow-md hover:bg-blue-700 transition-colors">
+          <button className="bg-gray-600 text-white text-lg px-8 py-3 rounded-full shadow-md hover:bg-blue-700 transition-colors">
             Buy Now
           </button>
-          <button className="bg-gray-600 text-white text-lg px-8 py-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
+          <button className="bg-gray-600 text-white text-lg px-8 py-3 rounded-full shadow-md hover:bg-blue-700 transition-colors">
             Add to Cart
           </button>
         </div>

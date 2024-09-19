@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import ProductDetail from '../Component/ProductDetail';
+import { ProductData } from '../Slice/ProductSlice';
 
 const Product = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate()
-  const Dispatch = useDispatch()
+  const dispatch = useDispatch()
 // ==================getting dada from API=========
   useEffect(() => {
     fetch('https://api.jsonbin.io/v3/b/66ea8189acd3cb34a8869ffe')
@@ -17,7 +19,7 @@ const Product = () => {
   const handelProduct = (perameter)=>{
       console.log(perameter)
       navigate('/ProductDetail')
-      Dispatch(ProductData(perameter))
+      dispatch(ProductData(perameter))
   }
 
   return (
@@ -25,7 +27,7 @@ const Product = () => {
       <div className="container">
         <div className="w-full h-full flex flex-wrap gap-10 p-5 bg-blue-600">
           {data.map((item) => (
-            <div
+            <div onClick={()=>handelProduct(item)}
               key={item.id}
               className="w-[330px] bg-blue-200 border border-gray-300 rounded-xl shadow-2xl hover:shadow-2xl transition-transform transform hover:-translate-y-3 p-6"
             >
@@ -54,7 +56,7 @@ const Product = () => {
                   <p className="text-lg font-bold text-blue-500">Price: {item.price_in_bd} BDT</p>
 
                   <div className="button pt-5 pb-5 flex gap-5 w-full">
-                    <button onClick={()=>handelProduct(item)} className="bg-blue-500 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                    <button  className="bg-blue-500 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
                       See More
                     </button>
                     <button className="bg-blue-500 w-[130px] text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
